@@ -568,6 +568,8 @@ body {
 
   .tombol {
     display: block;
+    position: absolute;
+    margin-left: 320px;
   }
 
   .menu {
