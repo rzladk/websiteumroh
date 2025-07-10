@@ -1,11 +1,11 @@
-// Toggle menu for responsive design
-// Pastikan tombol menu memiliki kelas 'tombol' dan menu memiliki kelas 'menu'
-  const toggleButton = document.querySelector('.tombol');
-  const menu = document.querySelector('.menu');
+const mobileNav = document.querySelector(".hamburger");
+const navbar = document.querySelector(".menubar");
 
-  toggleButton.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
+const toggleNav = () => {
+  navbar.classList.toggle("active");
+  mobileNav.classList.toggle("hamburger-active");
+};
+mobileNav.addEventListener("click", () => toggleNav());
 
 
 
