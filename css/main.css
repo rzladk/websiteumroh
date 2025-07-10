@@ -14,7 +14,7 @@ body {
 }
 
 nav {
-  padding: 5px 5%;
+  padding: 35px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,13 +30,6 @@ nav .logo img {
   height: 25px;
   width: auto;
   margin-right: 10px;
-}
-nav .logo h1 {
-  font-size: 1.1rem;
-  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 nav ul {
@@ -56,7 +49,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #f5f5f5;
+  background-color: #9be794;
 }
 
 .hamburger {
@@ -507,9 +500,11 @@ nav ul li a:hover {
 .testimonial-container {
   justify-content: center;
   display: flex;
+  align-items: center;
+  text-align: center;
   flex-direction: row;
   gap: 24px;
-  overflow-x: auto; /* jika mau bisa geser kiri-kanan di layar kecil */
+  flex-wrap: wrap;
   padding: 16px;
 }
 
@@ -537,6 +532,10 @@ nav ul li a:hover {
 
 /* footer */
 .footer {
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -555,6 +554,8 @@ nav ul li a:hover {
 }
 
 .footer-nav ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -573,6 +574,7 @@ nav ul li a:hover {
 }
 
 .footer-address h3 {
+  text-align: center;
   margin: 0;
   font-size: 20px;
   font-weight: bold;
@@ -583,6 +585,12 @@ nav ul li a:hover {
   color: #000000;
 }
 
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .footer-social a {
   margin-left: 10px;
   font-size: 18px;
@@ -590,8 +598,8 @@ nav ul li a:hover {
   border: 1px solid #ccc;
   padding: 8px;
   border-radius: 30%;
-  display: inline-block;
   transition: 0.3s, color 0.3s;
+  text-decoration: none; /* Remove underline from links */
 }
 
 .footer-social a:hover {
@@ -624,20 +632,22 @@ nav ul li a:hover {
 
 /* Mobile First (max-width: 768px) */
 @media screen and (max-width: 768px) {
- .hamburger {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .hamburger {
     display: block;
   }
   nav ul {
     display: none;
   }
-}
-
-  .about-header h1 {
-    font-size: 2em;
+  .menubar {
+    display: none;
   }
-
-  .about-header p {
-    font-size: 1em;
+  .menubar.active {
+    display: flex;
   }
 
   .product-item,
@@ -645,23 +655,9 @@ nav ul li a:hover {
     flex: 1 1 100%;
   }
 
-  .testimonial-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-left,
-  .footer-nav,
-  .footer-address,
-  .footer-social {
-    margin-bottom: 20px;
-    width: 100%;
+  .product-item img,
+  .gallery-item img {
+    height: 500px;
   }
 }
 
@@ -695,11 +691,6 @@ nav ul li a:hover {
 
 /* iPhone & Small Devices (max-width: 480px) */
 @media screen and (max-width: 480px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .menu {
     flex-direction: column;
     width: 100%;
@@ -746,9 +737,9 @@ nav ul li a:hover {
     height: 200px;
   }
 
-  .testimonial-card {
+  /* .testimonial-card {
     width: 100%;
-  }
+  } */
 
   .footer {
     padding: 20px;
@@ -763,9 +754,13 @@ nav ul li a:hover {
     width: 100%;
     margin-bottom: 20px;
   }
-
-  .slider .slide img {
-    height: 250px;
+  .footer-social a {
+    margin: 0 5px;
+    font-size: 16px;
   }
-}k
-/* End of responsive styles */
+  .footer-bottom {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
