@@ -21,6 +21,7 @@ nav {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   z-index: 1;
+  background-color: #f2f7f4;
 }
 nav .logo {
   display: flex;
@@ -392,6 +393,14 @@ nav ul li a:hover {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8 ease-out;
+}
+
+.product-item.slide-in{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .product-item:hover {
@@ -462,7 +471,16 @@ nav ul li a:hover {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8 ease-out;
 }
+
+.gallery-item.slide-in{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .gallery-item:hover {
   transform: scale(1.05);
   transition: transform 0.2s ease;
@@ -656,7 +674,7 @@ nav ul li a:hover {
   flex-wrap: wrap;
   margin-top: 20px;
   padding: 30px 50px;
-  background-color: #f8f8f8;
+  background-color: #f2f7f4;
   border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
 }
@@ -727,7 +745,7 @@ nav ul li a:hover {
   margin-top: 20px; /* Adjust spacing as needed */
   padding-top: 10px; /* Add some top padding */
   padding-bottom: 10px; /* Add some bottom padding */
-  background-color: #f8f8f8; /* Background color */
+  background-color: #f2f7f4; /* Background color */
   border-top: 1px solid #ccc; /* Top border for separation */
   font-size: 14px;
   color: #000000;
