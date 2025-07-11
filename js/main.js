@@ -87,3 +87,27 @@ const checkScrollForAnimation = () => {
 
 window.addEventListener('scroll', checkScrollForAnimation);
 checkScrollForAnimation();
+
+// modal-gallery
+let images = document.querySelectorAll('.gallery-item img');    
+images.forEach(image => {
+    image.addEventListener('click', function() {
+        let modal = document.getElementById('modal-gallery');
+        let itemImage = document.getElementById('item-image');
+        itemImage.src = this.src;
+        modal.style.display = 'block';
+    });
+});
+
+// add event listener to close the modal
+let modal = document.getElementById('modal-gallery');
+let closeModal = document.getElementById('close-modal');
+closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+// Close the modal when clicking outside of the image
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
