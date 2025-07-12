@@ -26,10 +26,11 @@ nav {
 nav .logo {
   display: flex;
   align-items: center;
+
 }
 nav .logo img {
-  height: 25px;
-  width: auto;
+  height: 60px;
+  width: 90px;
   margin-right: 10px;
 }
 
@@ -223,7 +224,7 @@ nav ul li a:hover {
 
 /* halaman utama */
 .hero-section {
-  background-image: url("/images/3.jpg"); /* Ganti dengan nama file gambar Anda */
+  background-image: url("/images/ka\'bah.jpg"); /* Ganti dengan nama file gambar Anda */
   background-size: cover; /* Penting agar gambar menutupi seluruh area */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah pengulangan gambar */
@@ -267,8 +268,8 @@ nav ul li a:hover {
   color: #eee; /* Warna teks paragraf */
 }
 
-.hero-content button {
-  background-color: #3498db; /* Warna biru untuk tombol */
+.hero-content .cta-button {
+  background-color: #0aab2d; /* Warna biru untuk tombol */
   color: white;
   padding: 15px 30px;
   border: none;
@@ -276,15 +277,22 @@ nav ul li a:hover {
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif; /* Font family untuk konsistensi */
+  margin-top: 10px;
+  gap: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-.hero-content button:hover {
-  background-color: #2980b9; /* Warna biru lebih gelap saat hover */
+.hero-content .cta-button:hover {
+  background-color: #3fbf3d; /* Warna biru lebih gelap saat hover */
 }
 
 /* project section */
 /*slideshow*/
-.project-section {
+/* .project-section {
   padding: 40px;
   background-color: #fff;
 }
@@ -363,7 +371,7 @@ nav ul li a:hover {
 
 .right {
   right: 10px;
-}
+} */
 /* End of slideshow */
 
 /* product-section */
@@ -378,6 +386,13 @@ nav ul li a:hover {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
+}
+
+.product-section p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
 }
 
 .product-grid {
@@ -428,7 +443,20 @@ nav ul li a:hover {
   color: #666;
 }
 
-.product-item button {
+.product-item .price {
+  font-weight: bold;
+  color: #0e0606;
+}
+
+.product-item .price::before {
+  content: "Hanya Rp.";
+}
+
+.product-item .price::after {
+  content: ",-";
+}
+
+.product-item .detail-button {
   display: block;
   width: 200px;
   margin: 20px auto;
@@ -443,7 +471,7 @@ nav ul li a:hover {
   transition: background-color 0.3s ease;
 }
 
-.product-item button:hover {
+.product-item .detail-button:hover {
   cursor: pointer;
   background-color: #2980b9; /* Warna biru lebih gelap saat hover */
 }
@@ -493,7 +521,7 @@ nav ul li a:hover {
   border-radius: 12px;
 }
 
-.gallery-section button {
+.gallery-section .gallery-button {
   display: block;
   width: 200px;
   margin: 20px auto;
@@ -506,9 +534,9 @@ nav ul li a:hover {
   font-size: 16px;
   border: none;
   transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif; /* Font family untuk konsistensi */
+  gap: 20px;
 }
-.gallery-section button:hover {
+.gallery-section .gallery-button:hover {
   cursor: pointer;
   background-color: #2980b9; /* Warna biru lebih gelap saat hover */
 }
@@ -743,7 +771,7 @@ nav ul li a:hover {
   color: #000000;
 }
 .footer-nav ul li a:hover {
-  color: #1da1f2;
+  color: #43cd4f;
 }
 
 .footer-address h3 {
