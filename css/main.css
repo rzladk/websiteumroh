@@ -26,7 +26,6 @@ nav {
 nav .logo {
   display: flex;
   align-items: center;
-
 }
 nav .logo img {
   height: 60px;
@@ -133,7 +132,7 @@ nav ul li a:hover {
 /* about */
 .about-header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("https://images.unsplash.com/photo-1570831113367-5c66aaee3f14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80")
+    url("/images/ka\'bah.jpg")
       no-repeat center center/cover;
   height: 60vh;
   color: white;
@@ -184,16 +183,71 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-.mission-vision h2 {
-  color: #28a745;
-  margin-bottom: 15px;
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.mission-vision ul {
+.card-container {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-image {
+  flex: 1 1 300px;
+  background: url("/images/medinah.jpg")
+    no-repeat center center;
+  background-size: cover;
+  min-height: 300px;
+
+}
+
+.card-content {
+  flex: 1 1 400px;
+  padding: 90px;
+  background-color: #268d3b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.card-content p,
+.card-content ul {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card-content ul {
   margin-top: 10px;
   padding-left: 20px;
 }
 
+.card-content ul li {
+  margin-bottom: 5px;
+}
+
+
+
+.values {
+  padding: 40px;
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+}
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -224,7 +278,7 @@ nav ul li a:hover {
 
 /* halaman utama */
 .hero-section {
-  background-image: url("/images/ka\'bah.jpg"); /* Ganti dengan nama file gambar Anda */
+  background-image: url("/images/ka'bah.jpg"); /* Ganti dengan nama file gambar Anda */
   background-size: cover; /* Penting agar gambar menutupi seluruh area */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah pengulangan gambar */
@@ -374,106 +428,121 @@ nav ul li a:hover {
 } */
 /* End of slideshow */
 
-/* product-section */
-.product-section {
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-}
-
-.product-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-.product-section p {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #666;
-}
-
-.product-grid {
+/* paket umroh */
+/* Container untuk mengatur card secara horizontal */
+.package-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   justify-content: center;
+  padding: 20px;
 }
 
-.product-item {
-  flex: 1 1 calc(25% - 20px); /* Empat item per baris dengan jarak antar item */
-  border-radius: 10px;
-  background-color: #f2f7f4;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: opacity 0.8s ease-out, transform 0.8 ease-out;
-}
-
-.product-item.slide-in{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.product-item:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
-
-.product-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+/* Card styling */
+.package-card {
+  background: white;
+  padding: 16px;
   border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  flex-basis: 300px; /* Lebar dasar 300px */
+  flex-shrink: 0;
+  flex-grow: 1; /* Boleh melebar */
+  display: flex;
+  flex-direction: column;
 }
 
-.product-item h3 {
-  margin: 10px 0;
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Gambar */
+.package-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Header */
+.package-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.package-title {
   font-size: 18px;
+  margin: 0;
   color: #333;
 }
 
-.product-item p {
+.package-duration {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Detail */
+.package-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+.detail-info h4 {
+  margin: 0;
   font-size: 16px;
+  color: #444;
+}
+
+.detail-info p {
+  margin: 2px 0 0;
+  font-size: 14px;
   color: #666;
 }
 
-.product-item .price {
+/* Harga dan tombol */
+.price-section {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-info {
+  font-size: 14px;
+  color: #444;
+}
+
+.price-value {
   font-weight: bold;
-  color: #0e0606;
-}
-
-.product-item .price::before {
-  content: "Hanya Rp.";
-}
-
-.product-item .price::after {
-  content: ",-";
-}
-
-.product-item .detail-button {
-  display: block;
-  width: 200px;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 25px;
   font-size: 16px;
+  color: #000000;
+}
+
+.book-button {
+  background-color: #6176ee;
+  color: white;
   border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
-.product-item .detail-button:hover {
-  cursor: pointer;
-  background-color: #2980b9; /* Warna biru lebih gelap saat hover */
+.book-button:hover {
+  background-color: #211bd8;
 }
 
 /* gallery */
@@ -504,7 +573,7 @@ nav ul li a:hover {
   transition: opacity 0.8s ease-out, transform 0.8 ease-out;
 }
 
-.gallery-item.slide-in{
+.gallery-item.slide-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -585,9 +654,10 @@ nav ul li a:hover {
 
 /* testimonial */
 .testimonial-container {
+  /* Properti yang sudah Anda miliki */
   justify-content: center;
   display: flex;
-  align-items: center;
+  align-items: stretch; /* PENTING: Mengatur item untuk meregang (stretch) */
   text-align: center;
   flex-direction: row;
   gap: 24px;
@@ -596,12 +666,23 @@ nav ul li a:hover {
 }
 
 .testimonial-card {
+  /* Properti yang sudah Anda miliki */
   background: white;
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  width: 300px; /* biar rapi ukuran sama */
+
+  /* Modifikasi Flexbox: */
+  /* Ubah 'width: 300px;' menjadi 'flex-basis' atau gunakan shorthand 'flex' */
+  /* Kita bisa gunakan flex: 1 1 300px; atau hanya flex-basis: 300px; */
+  /* flex-basis menentukan lebar dasar item */
+  flex-basis: 300px;
   flex-shrink: 0;
+  flex-grow: 1; /* IZINKAN kartu untuk tumbuh jika ada ruang */
+
+  /* PENTING: Jadikan kartu itu sendiri sebagai flex container untuk menempatkan kontennya (misalnya nama penulis) di bagian bawah secara konsisten, jika diinginkan. */
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-card img {
@@ -612,125 +693,35 @@ nav ul li a:hover {
 }
 
 .testimonial-card p {
+  text-align: justify;
   font-size: 16px;
   color: #333;
   margin: 12px 0;
+  /* Tambahkan flex-grow: 1; agar elemen teks meregang mengisi ruang */
+  /* flex-grow: 1; */
 }
 
-/* halaman produk */
-.cards-container {
-  padding: 20px;
-  margin: auto;
-  display: flex; /* Make this a flex container */
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  gap: 10px; /* Space between cards */
-  justify-content: center; /* Center cards horizontally within the container */
-  align-items: stretch; /* Make all cards the same height, very useful! */
-  max-width: 1200px; /* Optional: limit the max width of the container */
-  width: 100%; /* Ensure container takes full width up to max-width */
-  margin: 0 auto; /* Center the container on the page */
-}
+/* halaman paket */
 .package-card {
-  margin: 10px auto;
-  display: flex;
-  gap: 15px;
-  flex-direction: column;
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 10px 10px 10px 10px  rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: auto;
-  max-width: 350px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  margin: 20px;
+  padding: 24px;
+  /* Menggunakan Flexbox untuk tata letak vertikal */
+  display: flex;
+  flex-direction: column;
 }
+
 .package-card img {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  height: 200px;
   object-fit: cover;
-}
-
-.package-card:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
-
-.package-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 25px;
-  line-height: 1.3;
-}
-
-.detail-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  color: #555;
-  font-size: 16px;
-}
-
-.detail-row:last-of-type {
-  margin-bottom: 0;
-}
-
-.detail-icon {
-  font-family: "Material Icons";
-  font-size: 20px;
-  margin-right: 15px;
-  color: #777;
-  width: 24px; /* Ensure consistent icon width */
-  text-align: center;
-}
-
-.detail-label {
-  flex: 1;
-  font-weight: 500;
-}
-
-.detail-value {
-  font-weight: 400;
-  text-align: right;
-  color: #333;
-}
-
-.star-rating {
-  display: flex;
-  align-items: center;
-  margin-left: auto; /* Push stars to the right */
-}
-
-.star-rating .material-icons {
-  color: #ffc107; /* Gold color for stars */
-  font-size: 20px;
-  margin-left: 2px;
-}
-
-.button-container {
-  margin-top: 30px;
-}
-
-.detail-button {
-  display: block;
-  width: 100%;
-  padding: 15px 20px;
-  background-color: #1a73e8; /* A shade of blue, similar to the image's button color */
-  color: #fff;
-  border: none;
   border-radius: 8px;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
 }
 
-.detail-button:hover {
-  background-color: #155bb5;
-}
 /* footer */
 .footer {
   position: relative;
