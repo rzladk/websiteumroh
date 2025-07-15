@@ -199,7 +199,7 @@ nav ul li a:hover {
 
 /* project section */
 /*slideshow*/
-/* .project-section {
+.project-section {
   padding: 40px;
   background-color: #fff;
 }
@@ -278,7 +278,7 @@ nav ul li a:hover {
 
 .right {
   right: 10px;
-} */
+}
 /* End of slideshow */
 
 /* paket umroh */
@@ -890,6 +890,53 @@ h1 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+
+
+/* halaman kontak */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.contact-card {
+  background: #ffffff;
+  padding: 20px;
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card h3 {
+  color: #268d3b;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
 
 /* End of main.css */
 

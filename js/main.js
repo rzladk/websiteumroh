@@ -12,33 +12,35 @@ mobileNav.addEventListener("click", () => toggleNav());
 
 // Slider functionality
 // Pastikan slider memiliki ID 'slider' dan setiap slide memiliki kelas 'slide'
-// let currentIndex = 0;
 
-// function showSlide(index) {
-//   const slider = document.getElementById('slider');
-//   const slides = document.querySelectorAll('.slide');
-//   const slideWidth = slides[0].offsetWidth + 20; // Tambah gap
-//   const totalSlides = slides.length;
+let currentIndex = 0;
+function showSlide(index) {
+  const slider = document.getElementById('slider');
+  const slides = document.querySelectorAll('.slide');
+  const slideWidth = slides[0].offsetWidth + 20; // Tambah gap
+  const totalSlides = slides.length;
 
-//   if (index < 0) index = totalSlides - 1;
-//   if (index >= totalSlides) index = 0;
+  if (index < 0) index = totalSlides - 1;
+  if (index >= totalSlides) index = 0;
 
-//   currentIndex = index;
-//   slider.style.transform = `translateX(-${slideWidth * index}px)`;
-// }
+  currentIndex = index;
+  slider.style.transform = `translateX(-${slideWidth * index}px)`;
+}
 
-// function nextSlide() {
-//   showSlide(currentIndex + 1);
-// }
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
 
-// function prevSlide() {
-//   showSlide(currentIndex - 1);
-// }
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
 
 // Auto-slide
-// setInterval(() => {
-//   nextSlide();
-// }, 3000);
+setInterval(() => {
+  nextSlide();
+}, 3000);
+
+
 
 // Modal functionality for gallery images
 // Menunggu hingga seluruh halaman dan elemennya siap
@@ -86,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalImg = document.getElementById("item-image");
   const closeModal = document.getElementById("close-modal");
 
-  // Fungsi untuk membuka modal
+  // Fungsi untuk membuka modal 
   function openModal(src, alt) {
     modal.style.display = "block";
     modalImg.src = src;
@@ -108,10 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (loadMoreBtn && galleryGrid) {
     loadMoreBtn.addEventListener("click", function () {
       const newImages = [
-        { src: "/images/medinah.jpg", alt: "Gallery Image 5" },
-        { src: "/images/medinah.jpg", alt: "Gallery Image 6" },
-        { src: "/images/mekkah.jpg", alt: "Gallery Image 7" },
-        { src: "/images/madinah.jpg", alt: "Gallery Image 8" }
+        { src: "images/medinah.jpg", alt: "Gallery Image 5" },
+        { src: "images/medinah.jpg", alt: "Gallery Image 6" },
+        { src: "images/mekkah.jpg", alt: "Gallery Image 7" },
+        { src: "images/madinah.jpg", alt: "Gallery Image 8" }
       ];
 
       newImages.forEach(imgData => {
