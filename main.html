@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
+    <link rel="icon" href="/images/1..jpg">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -23,10 +24,10 @@
                 <a href="tentang.html">Tentang</a>
             </li>
             <li>
-                <a href="paket.html">Paket Umroh</a>
+                <a href="testimoni.html">Testimoni</a>
             </li>
             <li>
-                <a href="kontak.html">Contact Us</a>
+                <a href="kontak.html">Kontak Kami</a>
             </li>
         </ul>
         <div class="hamburger">
@@ -44,7 +45,7 @@
                 <a href="tentang.html">Tentang</a>
             </li>
             <li>
-                <a href="paket.html">Paket Umroh</a>
+                <a href="testimoni.html">Testimoni</a>
             </li>
             <li>
                 <a href="#">Contact Us</a>
@@ -150,7 +151,7 @@
                     <span class="price-label">Harga Mulai Dari:</span>
                     <span class="price-value">Rp 33.500.000</span>
                 </div>
-                <button class="book-button" onclick="window.location.href='paket.html'">Lihat Paket</button>
+                <button class="book-button" onclick="window.location.href='detail_umroh.html'">Lihat Paket</button>
             </div>
         </div>
 
@@ -194,7 +195,7 @@
                     <span class="price-label">Harga Mulai Dari:</span>
                     <span class="price-value">Rp 34.700.000</span>
                 </div>
-                <button class="book-button" onclick="window.location.href='paket.html'">Lihat Paket</button>
+                <button class="book-button" onclick="window.location.href='detail_umroh.html'">Lihat Paket</button>
             </div>
         </div>
 
@@ -238,98 +239,100 @@
                     <span class="price-label">Harga Mulai Dari:</span>
                     <span class="price-value">Rp 36.400.000</span>
                 </div>
-                <button class="book-button" onclick="window.location.href='paket.html'">Lihat Paket</button>
+                <button class="book-button" onclick="window.location.href='detail_umroh.html'">Lihat Paket</button>
             </div>
         </div>
     </div>
 
 
-        <!-- gallery-section -->
-        <div class="gallery-section">
-            <h2>Galeri</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="/images/mekkah.jpg" alt="Gallery Image 1"></div>
-                <div class="gallery-item"><img src="/images/madinah.jpg" alt="Gallery Image 2"></div>
-                <div class="gallery-item"><img src="/images/mekkah 2.jpg" alt="Gallery Image 3"></div>
-                <div class="gallery-item"><img src="/images/medinah.jpg" alt="Gallery Image 4"></div>
+    <!-- gallery-section -->
+    <div class="gallery-section">
+        <h2>Galeri</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="/images/mekkah.jpg" alt="Gallery Image 1"></div>
+            <div class="gallery-item"><img src="/images/madinah.jpg" alt="Gallery Image 2"></div>
+            <div class="gallery-item"><img src="/images/mekkah 2.jpg" alt="Gallery Image 3"></div>
+            <div class="gallery-item"><img src="/images/medinah.jpg" alt="Gallery Image 4"></div>
+        </div>
+        <button class="gallery-button" id="loadMoreBtn">
+            Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div id="modal-gallery">
+        <img src="" alt="" id="item-image">rj 
+        <button id="close-modal">Close</button>
+    </div>
+    <!-- testimonial-section -->
+    <section id="testimoni">
+        <h2 style="text-align:center;">Apa Kata Mereka</h2>
+
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <img src="/images/siluet.jpg" alt="John Doe">
+                <p>"Alhamdulillah, pengalaman umroh kali ini benar-benar luar biasa. Saya merasa sangat terbantu
+                    dengan
+                    bimbingan dari ustadz dan ustadzah yang mendampingi kami. Mereka tidak hanya memberikan
+                    penjelasan
+                    yang mendalam tentang tata cara ibadah, tetapi juga menciptakan suasana yang penuh kekhusyukan.
+                    Setiap langkah di Tanah Suci terasa lebih bermakna. Ini adalah perjalanan spiritual yang tidak
+                    akan
+                    pernah saya lupakan."</p>
+                <p><strong>- Budi Santoso</strong></p>
             </div>
-            <a href="galeri.html" class="gallery-button">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+
+            <div class="testimonial-card">
+                <img src="/images/siluet.jpg" alt="Jane Smith">
+                <p>"Kami sangat puas dengan pelayanan yang diberikan oleh [Nama Travel]. Mulai dari proses
+                    pendaftaran yang mudah, persiapan dokumen, hingga keberangkatan, semuanya diatur dengan
+                    profesional dan lancar. Akomodasi hotel di Mekkah dan Madinah sangat nyaman dan dekat dengan
+                    masjid, memudahkan kami untuk beribadah. Makanan yang disediakan juga sangat baik. Terima kasih
+                    atas perhatian dan dedikasi tim yang membuat perjalanan kami begitu nyaman."</p>
+                <p><strong>- Anton Nugroho</strong></p>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="/images/siluet.jpg" alt="Alice Johnson">
+                <p>"Semua sangat memuaskan. Pelayanan luar biasa, hotel oke, makanan enak. Insya Allah tahun depan
+                    kami ikut lagi bersama [Nama Travel]. Alhamdullilah, semua berjalan lancar dan penuh berkah."
+                </p>
+                <p><strong>- Maria Santoso</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <h3>Nama Perusahaan</h3>
         </div>
 
-        <div id="modal-gallery">
-            <img src="" alt="" id="item-image">
-            <button id="close-modal">Close</button>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="testimoni.html">Testimoni</a></li>
+                <li><a href="kontak.html">Kontak Kami</a></li>
+            </ul>
         </div>
-        <!-- testimonial-section -->
-        <section id="testimoni">
-            <h2 style="text-align:center;">Apa Kata Mereka</h2>
 
-            <div class="testimonial-container">
-                <div class="testimonial-card">
-                    <img src="/images/siluet.jpg" alt="John Doe">
-                    <p>"Alhamdulillah, pengalaman umroh kali ini benar-benar luar biasa. Saya merasa sangat terbantu
-                        dengan
-                        bimbingan dari ustadz dan ustadzah yang mendampingi kami. Mereka tidak hanya memberikan
-                        penjelasan
-                        yang mendalam tentang tata cara ibadah, tetapi juga menciptakan suasana yang penuh kekhusyukan.
-                        Setiap langkah di Tanah Suci terasa lebih bermakna. Ini adalah perjalanan spiritual yang tidak
-                        akan
-                        pernah saya lupakan."</p>
-                    <p><strong>- Budi Santoso</strong></p>
-                </div>
+        <div class="footer-address">
+            <h3>Alamat</h3>
+            <p class="address">Jl. Jenderal Sudirman No. 1<br>Jakarta, Indonesia</p>
+            <p class="phone">Phone: (123) 456-7890</p>
+            <p class="email">Email: Zj2qj@example.com</p>
+        </div>
 
-                <div class="testimonial-card">
-                    <img src="/images/siluet.jpg" alt="Jane Smith">
-                    <p>"Kami sangat puas dengan pelayanan yang diberikan oleh [Nama Travel]. Mulai dari proses
-                        pendaftaran yang mudah, persiapan dokumen, hingga keberangkatan, semuanya diatur dengan
-                        profesional dan lancar. Akomodasi hotel di Mekkah dan Madinah sangat nyaman dan dekat dengan
-                        masjid, memudahkan kami untuk beribadah. Makanan yang disediakan juga sangat baik. Terima kasih
-                        atas perhatian dan dedikasi tim yang membuat perjalanan kami begitu nyaman."</p>
-                    <p><strong>- Anton Nugroho</strong></p>
-                </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
 
-                <div class="testimonial-card">
-                    <img src="/images/siluet.jpg" alt="Alice Johnson">
-                    <p>"Semua sangat memuaskan. Pelayanan luar biasa, hotel oke, makanan enak. Insya Allah tahun depan
-                        kami ikut lagi bersama [Nama Travel]. Alhamdullilah, semua berjalan lancar dan penuh berkah."
-                    </p>
-                    <p><strong>- Maria Santoso</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- footer -->
-        <footer class="footer">
-            <div class="footer-left">
-                <h3>Nama Perusahaan</h3>
-            </div>
-
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="main.html">Home</a></li>
-                    <li><a href="tentang.html">Tentang</a></li>
-                    <li><a href="paket.html">Paket Umroh</a></li>
-                    <li><a href="kontak.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-address">
-                <h3>Alamat</h3>
-                <p class="address">Jl. Jenderal Sudirman No. 1<br>Jakarta, Indonesia</p>
-                <p class="phone">Phone: (123) 456-7890</p>
-                <p class="email">Email: Zj2qj@example.com</p>
-            </div>
-
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-
-            <div class="footer-bottom">
-                <p> &copy; All rights reserved</p>
-            </div>
-        </footer>
+        <div class="footer-bottom">
+            <p> &copy; All rights reserved</p>
+        </div>
+    </footer>
 </body>
 
 <script src="js/main.js"></script>

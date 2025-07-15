@@ -64,50 +64,86 @@ footer.innerHTML = `&copy; ${year} - All rights reserved`;
 const checkScrollForAnimation = () => {
 
   let scrollY = this.window.scrollY || this.window.pageYOffset;
-  let productItem = this.document.querySelectorAll('.product-item');
   let galleryItem = this.document.querySelectorAll('.gallery-item');
-  
-  if(scrollY >= 280){
-    productItem.forEach((card, index) =>{
-      setTimeout(()=>{
-        card.classList.add('slide-in');
-      }, index * 400)
-    });
-  }
-
-  if(scrollY >= 500){
+  if (scrollY >= 500) {
     galleryItem.forEach((card, index) => {
-      setTimeout(()=>{
+      setTimeout(() => {
         card.classList.add('slide-in')
       }, index * 400)
     });
     window.removeEventListener('scroll', checkScrollForAnimation);
   }
 }
-
 window.addEventListener('scroll', checkScrollForAnimation);
 checkScrollForAnimation();
 
-// modal-gallery
-let images = document.querySelectorAll('.gallery-item img');    
-images.forEach(image => {
-    image.addEventListener('click', function() {
-        let modal = document.getElementById('modal-gallery');
-        let itemImage = document.getElementById('item-image');
-        itemImage.src = this.src;
-        modal.style.display = 'block';
-    });
-});
 
-// add event listener to close the modal
-let modal = document.getElementById('modal-gallery');
-let closeModal = document.getElementById('close-modal');
-closeModal.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
-// Close the modal when clicking outside of the image
-modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+// load more functionality for gallery + modal
+document.addEventListener("DOMContentLoaded", function () {
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const galleryGrid = document.querySelector(".gallery-grid");
+  const modal = document.getElementById("modal-gallery");
+  const modalImg = document.getElementById("item-image");
+  const closeModal = document.getElementById("close-modal");
+
+  // Fungsi untuk membuka modal
+  function openModal(src, alt) {
+    modal.style.display = "block";
+    modalImg.src = src;
+    modalImg.alt = alt;
+  }
+
+  // Fungsi untuk pasang klik modal ke semua gambar
+  function applyModalToImages() {
+    const allImages = document.querySelectorAll(".gallery-item img");
+    allImages.forEach(img => {
+      img.onclick = () => openModal(img.src, img.alt);
+    });
+  }
+
+  // Inisialisasi untuk gambar awal
+  applyModalToImages();
+
+  // Load more button klik
+  if (loadMoreBtn && galleryGrid) {
+    loadMoreBtn.addEventListener("click", function () {
+      const newImages = [
+        { src: "/images/medinah.jpg", alt: "Gallery Image 5" },
+        { src: "/images/medinah.jpg", alt: "Gallery Image 6" },
+        { src: "/images/mekkah.jpg", alt: "Gallery Image 7" },
+        { src: "/images/madinah.jpg", alt: "Gallery Image 8" }
+      ];
+
+      newImages.forEach(imgData => {
+        const div = document.createElement("div");
+        div.className = "gallery-item slide-in";
+
+        const img = document.createElement("img");
+        img.src = imgData.src;
+        img.alt = imgData.alt;
+
+        div.appendChild(img);
+        galleryGrid.appendChild(div);
+      });
+
+      applyModalToImages(); // Tambahkan klik modal ke gambar baru
+      loadMoreBtn.style.display = "none"; // Sembunyikan tombol
+    });
+  }
+
+  // Tutup modal saat klik tombol Close
+  if (closeModal) {
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  // Tutup modal saat klik di luar gambar
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 });
