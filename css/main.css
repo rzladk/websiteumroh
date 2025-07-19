@@ -375,15 +375,23 @@ nav ul li a:hover {
 }
 
 .price-info {
-  font-size: 14px;
-  color: #444;
+  display: flex;
+  align-items: center; /* Vertikal rata tengah */
+  gap: 10px;           /* Jarak antara label dan nilai */
+  justify-content: center;
+}
+
+.price-label,
+.price-value {
+  font-size: 16px;
+  color: #555;
 }
 
 .price-value {
   font-weight: bold;
-  font-size: 16px;
-  color: #000000;
+  color: #000;
 }
+
 
 .book-button {
   background-color: #6176ee;
@@ -644,70 +652,6 @@ nav ul li a:hover {
   text-align: center; /* Center the text */
 }
 
-/* halaman detail */
-.detail-container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.header h1 {
-  color: #0e4d92;
-}
-
-.image-banner {
-  width: 100%;
-  height: 300px;
-  background: url("https://images.unsplash.com/photo-1583225572442-4fe7b71be9a2?auto=format&fit=crop&w=1050&q=80")
-    center center no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  margin-bottom: 30px;
-}
-
-.section {
-  margin-bottom: 20px;
-}
-
-.section h2 {
-  color: #00a9b7;
-  margin-bottom: 10px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-.price {
-  font-size: 24px;
-  color: #d35400;
-  margin-top: 10px;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  margin-top: 30px;
-  background-color: #25d366;
-  color: white;
-  padding: 15px 25px;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1ebe57;
-}
-
 /* halaman tentang */
 .about-header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -891,7 +835,6 @@ h1 {
   cursor: pointer;
 }
 
-
 /* halaman kontak */
 .contact-section {
   padding: 60px 20px;
@@ -937,7 +880,67 @@ h1 {
   line-height: 1.6;
 }
 
+/* halaman detail */
+.detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #000000;
+}
+
+.image-banner {
+  width: 100%;
+  height: 400px;
+  background: url("/images/logo.jpg") center center no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #3aa35f;
+}
 /* End of main.css */
 
 /* ================== Responsive Styles ================== */
